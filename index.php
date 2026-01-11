@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+require 'LocalStorage.php';
+
+$tasks = [
+    "Finish PHP project",
+    "Read documentation",
+    "Test API endpoints",
+    "Deploy to production"
+];
+
+$stor = new LocalStorage();
+$stor->save($tasks);
+$data = $stor->load();
+echo $data;
