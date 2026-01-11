@@ -1,6 +1,6 @@
 <?php
 
-require 'StorageInterface.php';
+require_once 'StorageInterface.php';
 
 class LocalStorage implements StorageInterface
 {
@@ -16,7 +16,7 @@ class LocalStorage implements StorageInterface
         file_put_contents($this->filePath,  $data,  LOCK_EX);
     }
 
-    
+
     public function load(): array
     {
 

@@ -1,6 +1,6 @@
 <?php
 
-require 'StorageInterface.php';
+require_once 'StorageInterface.php';
 require 'Task.php';
 
 

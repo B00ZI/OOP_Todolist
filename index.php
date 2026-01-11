@@ -1,5 +1,7 @@
 <?php
-require 'LocalStorage.php';
+require_once 'LocalStorage.php';
+require_once 'Tasklist.php';
+require_once 'Task.php';
 
 $tasks = [
     "Finish PHP project",
@@ -8,7 +10,17 @@ $tasks = [
     "Deploy to production"
 ];
 
-$stor = new LocalStorage();
-$stor->save($tasks);
-$data = $stor->load();
-echo $data;
+$storage = new LocalStorage();
+$tasklist = new Tasklist($storage);
+
+$task = new Task("Finish PHP project 1" , "finich the projict detailes bla bla");
+$task1 = new Task("Finish  project 2" , "finich the projict  bla bla" );
+$task2 = new Task("Finish PHP  3" , "finich the projict detailes bla bla" );
+$task3 = new Task('Test API endpoints  4', "finich the projict detailes bla bla" );
+
+
+
+$tasklist->addTask($task);
+$tasklist->addTask($task1);
+$tasklist->addTask($task2);
+$tasklist->addTask($task3);
