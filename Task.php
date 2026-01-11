@@ -17,4 +17,7 @@ class Task
     public function isDone(){
         return  $this-> done ;
     }
+    public function getTitle(){
+        return $this->title;
+    }
 }
